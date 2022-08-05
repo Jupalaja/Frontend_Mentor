@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Space+Mono:wght@700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  background-color: hsl(185deg, 41%, 84%);
+}
+
+.header__title {
+  text-align: center;
+  color: hsl(186deg, 14%, 43%);
+  font-size: 1em;
+  margin: 30px 0;
+  letter-spacing: 8px;
+}
+
+.calculator-container {
+  background-color: hsl(0deg, 0%, 100%);
+  width: 375px;
+  margin: auto;
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.inputs-section_bill-label {
+  display: block;
+  font-size: 0.75em;
+  margin-bottom: 8px;
+  color: hsl(186deg, 14%, 43%);
+}
+
+.inputs-section_bill-input {
+  width: 100%;
+  height: 48px;
+  border: none;
+  font-size: 1em;
+  text-align: right;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding-right: 10px;
+  font-family: "Space Mono", monospace;
+  color: hsl(183deg, 100%, 15%);
+  caret-color: hsl(172deg, 67%, 45%);
+  background-image: url("../images/icon-dollar.svg");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-color: hsl(189deg, 41%, 97%);
+}
+.inputs-section_bill-input:hover {
+  cursor: pointer;
+}
+.inputs-section_bill-input:focus {
+  outline: none;
+  border: 2px solid hsl(172deg, 67%, 45%);
+}
+
+.btns {
+  gap: 15px;
+  border: none;
+  display: grid;
+  margin-bottom: 30px;
+  grid-template-columns: 1fr 1fr;
+}
+.btns__legend {
+  display: block;
+  font-size: 0.75em;
+  margin-bottom: 8px;
+  color: hsl(186deg, 14%, 43%);
+}
+.btns__button {
+  width: 147px;
+  height: 50px;
+  border: none;
+  font-size: 1em;
+  border-radius: 4px;
+  font-family: "Space Mono", monospace;
+  color: hsl(189deg, 41%, 97%);
+  background-color: hsl(183deg, 100%, 15%);
+}
+.btns__button:hover {
+  cursor: pointer;
+}
+.btns__button--selected {
+  background-color: hsl(172deg, 67%, 45%);
+  color: hsl(183deg, 100%, 15%);
+}
+.btns__custom {
+  text-align: center;
+  width: 100%;
+  height: 48px;
+  border: none;
+  font-size: 1em;
+  text-align: right;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding-right: 10px;
+  font-family: "Space Mono", monospace;
+  color: hsl(183deg, 100%, 15%);
+  caret-color: hsl(172deg, 67%, 45%);
+  background-image: url(unset);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-color: hsl(189deg, 41%, 97%);
+  color: hsl(186deg, 14%, 43%);
+}
+.btns__custom:hover {
+  cursor: pointer;
+}
+.btns__custom:focus {
+  outline: none;
+  border: 2px solid hsl(172deg, 67%, 45%);
+}
+
+.inputs-section_people-label {
+  display: block;
+  font-size: 0.75em;
+  margin-bottom: 8px;
+  color: hsl(186deg, 14%, 43%);
+}
+
+.inputs-section_people-input {
+  width: 100%;
+  height: 48px;
+  border: none;
+  font-size: 1em;
+  text-align: right;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding-right: 10px;
+  font-family: "Space Mono", monospace;
+  color: hsl(183deg, 100%, 15%);
+  caret-color: hsl(172deg, 67%, 45%);
+  background-image: url("../images/icon-person.svg");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-color: hsl(189deg, 41%, 97%);
+}
+.inputs-section_people-input:hover {
+  cursor: pointer;
+}
+.inputs-section_people-input:focus {
+  outline: none;
+  border: 2px solid hsl(172deg, 67%, 45%);
+}
+
+.error {
+  color: rgb(164, 68, 68);
+}
+.error::after {
+  content: "Can't be zero";
+  font-size: 0.7em;
+}
+
+.result-section {
+  display: flex;
+  border-radius: 12px;
+  flex-direction: column;
+  padding: 42px 24px 24px;
+  justify-content: space-between;
+  background-color: hsl(183deg, 100%, 15%);
+}
+.result-section__reset {
+  border: none;
+  height: 50px;
+  font-size: 1em;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-family: "Space Mono", monospace;
+  color: hsl(183deg, 100%, 15%);
+  background-color: hsl(172deg, 67%, 45%);
+}
+.result-section__reset:hover {
+  cursor: pointer;
+  background-color: hsl(185deg, 41%, 84%);
+}
+
+.results {
+  gap: 20px;
+  display: grid;
+  margin-bottom: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+.results__tip-amount, .results__total-amount {
+  font-size: 0.75em;
+  color: hsl(0deg, 0%, 100%);
+}
+.results__tip-person, .results__total-person {
+  font-size: 0.6em;
+  color: hsl(185deg, 41%, 84%);
+}
+.results__tip-value, .results__total-value {
+  font-size: 1.2em;
+  color: hsl(172deg, 67%, 45%);
+  text-align: right;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+/*------------------------------- Desktop -------------------------------*/
+@media (min-width: 1300px) {
+  .header__title {
+    margin: 30px 0 30px;
+  }
+  .inputs-section_bill-label {
+    font-size: 0.6em;
+  }
+  .calculator-container {
+    width: 900px;
+    height: 450px;
+    display: flex;
+    gap: 50px;
+  }
+  .inputs-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+  }
+  .result-section {
+    flex: 1;
+  }
+  .btns {
+    margin-bottom: 0;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .btns__button {
+    width: 120px;
+  }
+  .btns__legend {
+    font-size: 0.6em;
+  }
+  .inputs-section_people-label {
+    font-size: 0.6em;
+  }
+  .inputs-section_people-input {
+    margin-bottom: 0;
+  }
+  .results__tip-value, .results__total-value {
+    font-size: 2em;
+  }
+  .results__tip-amount, .results__total-amount {
+    font-size: 0.6em;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

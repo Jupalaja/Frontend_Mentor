@@ -1,0 +1,34 @@
+@use "variables";
+
+@mixin label {
+  display: block;
+  font-size: 0.75em;
+  margin-bottom: 8px;
+  color: variables.$Dark-grayish-cyan;
+}
+@mixin input($icon) {
+  width: 100%;
+  height: 48px;
+  border: none;
+  font-size: 1em;
+  text-align: right;
+  border-radius: 4px;
+  margin-bottom: 30px;
+  padding-right: 10px;
+  font-family: variables.$font;
+  color: variables.$Very-dark-cyan;
+  caret-color: variables.$Strong-cyan;
+  &:hover {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+    border: 2px solid variables.$Strong-cyan;
+  }
+  background: {
+    image: url($icon);
+    repeat: no-repeat;
+    position: 10px center;
+    color: variables.$Very-light-grayish-cyan;
+  }
+}
